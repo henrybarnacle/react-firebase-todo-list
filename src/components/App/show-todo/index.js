@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import TodoList from './todo-list';
-import {getSectionById} from 'reducers/todo';
+import { getSectionById } from '../../../reducers/todo';
 import {connect} from 'react-redux';
 
 class ShowTodo extends Component {

@@ -16,3 +16,8 @@ export default (state = initialState, action) => {
       return state
   }
 }
+
+export const getSectionById = (state, sectionId) => {
+  return state.sections[sectionId] || {}
+}
+
