@@ -5,7 +5,7 @@ import {routerMiddleware} from 'react-router-redux'
 
 
 export default (history) => {
-	let middleWares = [thunk, routerMiddleware(history)]
-	let store = createStore(reducers, applyMiddleware(...middleWares));
+	let middlewares = [thunk, routerMiddleware(history)]
+	let store = createStore(reducers, applyMiddleware(...middlewares));
 	return store;
 }

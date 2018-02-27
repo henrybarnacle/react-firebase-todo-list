@@ -28,6 +28,6 @@ class ShowTodo extends Component {
 }
 const mapStateToProps = (state, props) => {
   //passing todo reducer and section's id
-  return {section: getSectionById(state.todo, props.param.id)} 
+  return {section: getSectionById(state.todo, props.params.id)} 
 }
-export default connect(mapStateToProps, {createTodoItem})(ShowTodo)
+export default connect(mapStateToProps, { createTodoItem})(ShowTodo)

@@ -1,6 +1,6 @@
 import { getSectionsDB, addSection, addTodoItem } from 'javascripts/firebase';
 import actionType from '../constants/index';
-import {push} from 'react-router-redux';
+import { push } from 'react-router-redux';
 
 
 export const loadSections = () => {
@@ -66,6 +66,6 @@ export const createTodoItem = (sectionId, name) => {
 }
 export const loadSpecificSection = (sectionId) => {
   return (dispatch) => {
-    dispatch(push(`/${sectionId}`))
+    dispatch(push(`/${sectionId}`));
   }
 }

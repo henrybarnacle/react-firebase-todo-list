@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import SectionList from './section-list';
 import {connect} from 'react-redux';
 import {loadSections, loadSpecificSection, createSection} from '../../actions/todo';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 class App extends Component {
   componentDidMount() {
@@ -20,15 +23,13 @@ onSubmit = (e) => {
     ref.value = ''
   }
 
-
-
 render() {
     return (
-      <div>
-        <SectionList sections={this.props.sections} onCLick={this.onSectionClick} />
-        <form onSubmit={this.onSubmit}>
+      <div className="container-fluid">
+        <SectionList sections={this.props.sections} onClick={this.onSectionClick} />
+          <form onSubmit={this.onSubmit}>
           <input ref="section-name"/>
-          <button>Add new item</button>
+          <button className="btn btn-primary">Add new item</button>
         </form>
       </div>
     );
@@ -39,4 +40,4 @@ const mapStateToProps = (state) => {
     sections: state.todo.sections
   }
 }
-export default connect(mapStateToProps, {loadSections, createSection,loadSpecificSection})(App)
+export default connect(mapStateToProps, {loadSpecificSection, loadSections, createSection})(App)
